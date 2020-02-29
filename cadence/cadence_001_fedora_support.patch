@@ -1,0 +1,132 @@
+From 8ec9214da5ff699a243917054fbf530fdb685546 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Sat, 12 May 2018 14:05:15 +0200
+Subject: [PATCH] fedora support
+
+---
+ src/claudia_database.py |  2 ++
+ src/claudia_launcher.py | 21 +++++++++++++++++++--
+ src/shared_cadence.py   | 21 +++++++++++++--------
+ 3 files changed, 34 insertions(+), 10 deletions(-)
+
+diff --git a/src/claudia_database.py b/src/claudia_database.py
+index 7424fbf..69e975c 100644
+--- a/src/claudia_database.py
++++ b/src/claudia_database.py
+@@ -24,6 +24,8 @@ USING_KXSTUDIO = False
+ 
+ list_DAW = [
+   # Package          AppName            Type              Binary              Icon                Template?     Level      (L, D, L, V, VST-Mode,  T, M, MIDI-Mode)      (doc-file,                                                         website)
++  [ "ardour5",       "Ardour 5",        "DAW",            "ardour5",          "ardour",           TEMPLATE_NO,  LEVEL_JS,  (1, 0, 1, 1, "Native",  1, 1, "JACK"),        ("",                                                               "http://www.ardour.org/") ],
++
+   [ "ardour4",       "Ardour 4",        "DAW",            "ardour4",          "ardour",           TEMPLATE_NO,  LEVEL_JS,  (1, 0, 1, 1, "Native",  1, 1, "JACK"),        ("",                                                               "http://www.ardour.org/") ],
+ 
+   [ "ariamaestosa",  "Aria Maestosa",   "MIDI Sequencer", "Aria",             "aria",             TEMPLATE_NO,  LEVEL_0,   (0, 0, 0, 0, "",        0, 1, "ALSA | JACK"), ("",                                                               "http://ariamaestosa.sf.net/") ],
+diff --git a/src/claudia_launcher.py b/src/claudia_launcher.py
+index dc06058..3bb6150 100755
+--- a/src/claudia_launcher.py
++++ b/src/claudia_launcher.py
+@@ -20,6 +20,7 @@
+ # Imports (Global)
+ 
+ from random import randint
++import os
+ 
+ if True:
+     from PyQt5.QtCore import pyqtSlot, Qt, QTimer, QSettings
+@@ -119,6 +120,10 @@ class ClaudiaLauncher(QWidget, ui_claudia_launcher.Ui_ClaudiaLauncherW):
+         self._parent   = None
+         self._settings = None
+         self.m_ladish_only = False
++        if os.path.isdir("/usr/lib64"):
++            self.lib_path = "lib64"
++        else:
++            self.lib_path = "lib"
+ 
+         self.listDAW.setColumnWidth(0, 22)
+         self.listDAW.setColumnWidth(1, 225)
+@@ -696,6 +701,18 @@ class ClaudiaLauncher(QWidget, ui_claudia_launcher.Ui_ClaudiaLauncherW):
+                 for package in pkg_out:
+                     pkglist.append(package)
+ 
++            elif os.path.exists("/usr/bin/dnf"):
++                pkg_out = getoutput("env LANG=C LC_ALL=C /usr/bin/dnf list installed 2>/dev/null").split("\n")
++                for pkg_info in pkg_out[2:]:
++                    package = pkg_info.split(" ")[0].split(".")[0]
++                    pkglist.append(package.strip())
++
++            elif os.path.exists("/usr/bin/yum"):
++                pkg_out = getoutput("env LANG=C LC_ALL=C /usr/bin/yum list installed 2>/dev/null").split("\n")
++                for package in pkg_out[2:]:
++                    package = pkg_info.split(" ")[0].split(".")[0]
++                    pkglist.append(package.strip())
++ 
+             elif os.path.exists("/usr/bin/dpkg"):
+                 pkg_out = getoutput("env LANG=C LC_ALL=C /usr/bin/dpkg --get-selections 2>/dev/null").split("\n")
+                 for pkg_info in pkg_out:
+@@ -823,10 +840,10 @@ class ClaudiaLauncher(QWidget, ui_claudia_launcher.Ui_ClaudiaLauncherW):
+ 
+                 last_pos += 1
+ 
+-        if haveCarla and os.path.exists("/usr/lib/carla/libcarla_utils.so"):
++        if haveCarla and os.path.exists("/usr/" + self.lib_path + "/carla/libcarla_utils.so"):
+             utils = CarlaUtils("/usr/lib/carla/libcarla_utils.so")
+             last_pos = 0
+-            lv2path = os.getenv("LV2_PATH", "~/.lv2:/usr/lib/lv2:/usr/local/lib/lv2")
++            lv2path = os.getenv("LV2_PATH", "~/.lv2:/usr/" + self.lib_path + "/lv2:/usr/local/" + self.lib_path + "/lv2")
+             for i in range(utils.get_cached_plugin_count(PLUGIN_LV2, lv2path)):
+                 plugin = utils.get_cached_plugin_info(PLUGIN_LV2, i)
+ 
+diff --git a/src/shared_cadence.py b/src/shared_cadence.py
+index 2a819f3..d4b676c 100644
+--- a/src/shared_cadence.py
++++ b/src/shared_cadence.py
+@@ -30,32 +30,37 @@ else:
+ # Imports (Custom Stuff)
+ 
+ from shared import *
++import os
+ 
+ # ------------------------------------------------------------------------------------------------------------
+ # Default Plugin PATHs
++if os.path.isdir("/usr/lib64"):
++    LIB_PATH = "lib64"
++else:
++    LIB_PATH = "lib"
+ 
+ DEFAULT_LADSPA_PATH = [
+     os.path.join(HOME, ".ladspa"),
+-    os.path.join("/", "usr", "lib", "ladspa"),
+-    os.path.join("/", "usr", "local", "lib", "ladspa")
++    os.path.join("/", "usr", LIB_PATH, "ladspa"),
++    os.path.join("/", "usr", "local", LIB_PATH, "ladspa")
+ ]
+ 
+ DEFAULT_DSSI_PATH = [
+     os.path.join(HOME, ".dssi"),
+-    os.path.join("/", "usr", "lib", "dssi"),
+-    os.path.join("/", "usr", "local", "lib", "dssi")
++    os.path.join("/", "usr", LIB_PATH, "dssi"),
++    os.path.join("/", "usr", "local", LIB_PATH, "dssi")
+ ]
+ 
+ DEFAULT_LV2_PATH = [
+     os.path.join(HOME, ".lv2"),
+-    os.path.join("/", "usr", "lib", "lv2"),
+-    os.path.join("/", "usr", "local", "lib", "lv2")
++    os.path.join("/", "usr", LIB_PATH, "lv2"),
++    os.path.join("/", "usr", "local", LIB_PATH, "lv2")
+ ]
+ 
+ DEFAULT_VST_PATH = [
+     os.path.join(HOME, ".vst"),
+-    os.path.join("/", "usr", "lib", "vst"),
+-    os.path.join("/", "usr", "local", "lib", "vst")
++    os.path.join("/", "usr", LIB_PATH, "vst"),
++    os.path.join("/", "usr", "local", LIB_PATH, "vst")
+ ]
+ 
+ # ------------------------------------------------------------------------------------------------------------
+-- 
+2.13.6
+
