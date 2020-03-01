@@ -4,7 +4,7 @@ Name:           distrho-ports
 Version:        20180416git
 Release:        1%{?dist}
 ExclusiveArch:  x86_64
-Summary:        A collection of LV2 plugins
+Summary:        A collection of audio plugins
 
 Group:          Applications/Multimedia
 License:        MIT
