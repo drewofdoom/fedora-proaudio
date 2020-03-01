@@ -1,6 +1,6 @@
 %global debug_package %{nil}
 
-Name:           lv2-distrho-ports
+Name:           distrho-ports
 Version:        20180416git
 Release:        1%{?dist}
 ExclusiveArch:  x86_64
@@ -12,12 +12,18 @@ URL:            https://github.com/DISTRHO/DISTRHO-Ports
 Source0:        https://github.com/DISTRHO/DISTRHO-Ports/releases/download/2018-04-16/DISTRHO-Ports-2018-04-16-linux64.tar.xz
 
 %description
+A collection of audio plugins
+
+%package -n lv2-distrho-ports
+Summary:        A collection of LV2 plugins
+Group:          Applications/Multimedia
+
+%description -n lv2-distrho-ports
 A collection of LV2 plugins
 
 %package -n vst-distrho-ports
 Summary:        A collection of VST plugins
 Group:          Applications/Multimedia
-Requires:       %{name}-common = %{version}-%{release}
 
 %description -n vst-distrho-ports
 A collection of VST plugins
@@ -34,7 +40,7 @@ install -p -m 744 vst/*.so %{buildroot}%{_libdir}/vst/
 
 %clean
 
-%files
+%files -n lv2-distrho-ports
 %{_libdir}/lv2/
 
 %files -n vst-distrho-ports
