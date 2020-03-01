@@ -12,10 +12,10 @@ URL:            https://github.com/DISTRHO/DISTRHO-Ports
 Source0:        https://github.com/DISTRHO/DISTRHO-Ports/releases/download/2018-04-16/DISTRHO-Ports-2018-04-16-linux64.tar.xz
 
 %description
-A LUFS meter
+A collection of LV2 plugins
 
 %package -n vst-distrho-ports
-Summary:        A LUFS meter
+Summary:        A collection of VST plugins
 Group:          Applications/Multimedia
 Requires:       %{name}-common = %{version}-%{release}
 
