@@ -20,13 +20,13 @@ Adds support for Windows VST3's to be used in Linux VST3 capable DAW's.
 
 %install
 mkdir -p %{buildroot}/%{_bindir}
-mkdir -p %{buildroot}/%{_libdir}/linvst
-mkdir -p %{buildroot}%{_datadir}/doc/linvst
-mkdir -p %{buildroot}%{_datadir}/linvst
-install -p -m 744 embedded/linvst.so %{buildroot}/%{_datadir}/linvst/
-install -p -m 755 embedded/lin-vst-server* %{buildroot}/%{_bindir}
-install -p -m 755 convert/linvstconvert* %{buildroot}/%{_bindir}
-install -p -m 744 ReadMe %{buildroot}%{_datadir}/doc/linvst/
+mkdir -p %{buildroot}/%{_libdir}/linvst3
+mkdir -p %{buildroot}%{_datadir}/doc/linvst3
+mkdir -p %{buildroot}%{_datadir}/linvst3
+install -p -m 744 embedded/linvst3.so %{buildroot}/%{_datadir}/linvst3/
+install -p -m 755 embedded/lin-vst3-server* %{buildroot}/%{_bindir}
+install -p -m 755 convert/linvst3convert* %{buildroot}/%{_bindir}
+install -p -m 744 ReadMe %{buildroot}%{_datadir}/doc/linvst3/
 
 %clean
 
