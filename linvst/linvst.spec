@@ -22,8 +22,7 @@ Adds support for Windows vst's to be used in Linux vst capable DAW's.
 mkdir -p %{buildroot}/%{_bindir}
 mkdir -p %{buildroot}/%{_libdir}/linvst
 mkdir -p %{buildroot}%{_datadir}/doc/linvst
-mkdir -p %{buildroot}%{_datadir}/linvst
-install -p -m 744 embedded/linvst.so %{buildroot}/%{_datadir}/linvst/
+install -p -m 744 embedded/linvst.so %{buildroot}/%{_libdir}/linvst/
 install -p -m 755 embedded/lin-vst-server* %{buildroot}/%{_bindir}
 install -p -m 755 convert/linvstconvert* %{buildroot}/%{_bindir}
 install -p -m 744 ReadMe %{buildroot}%{_datadir}/doc/linvst/
@@ -33,7 +32,7 @@ install -p -m 744 ReadMe %{buildroot}%{_datadir}/doc/linvst/
 %files 
 %doc ReadMe
 %{_datadir}/doc/%{name}/
-%{_datadir}/%{name}/linvst.so
+%{_libdir}/%{name}/linvst.so
 %{_bindir}/lin-vst-server*
 %{_bindir}/linvstconvert*
 
