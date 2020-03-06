@@ -40,7 +40,6 @@ install -p -m 744 ReadMe %{buildroot}%{_datadir}/doc/linvst/
 * Fri Feb 28 2020 Drew DeVore <drew@devorcula.com> - 2.8
 - Bump to 2.8
 
-
 * Sun Sep 22 2019 Drew DeVore <drew@devorcula.com> - 2.7
 - Bump to 2.7 and send linvst.so to /usr/share
 
