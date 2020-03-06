@@ -2,7 +2,7 @@
 
 Name:           linvst
 Version:        2.8
-Release:        1%{?dist}
+Release:        2%{?dist}
 ExclusiveArch:  x86_64
 Summary:        Adds support for Windows vst's to be used in Linux vst capable DAW's.
 
@@ -37,6 +37,9 @@ install -p -m 744 ReadMe %{buildroot}%{_datadir}/doc/linvst/
 %{_bindir}/linvstconvert*
 
 %changelog
+* Fri Mar 6 2020 Drew DeVore <drew@devorcula.com> - 2.8
+- Bumped release as package is not updating in COPR
+
 * Fri Feb 28 2020 Drew DeVore <drew@devorcula.com> - 2.8
 - Bump to 2.8
 

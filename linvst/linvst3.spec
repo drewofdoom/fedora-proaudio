@@ -2,7 +2,7 @@
 
 Name:           linvst3
 Version:        1.8
-Release:        1%{?dist}
+Release:        2%{?dist}
 ExclusiveArch:  x86_64
 Summary:        Adds support for Windows VST3's to be used in Linux VST3 capable DAW's.
 
@@ -37,5 +37,8 @@ install -p -m 744 ReadMe %{buildroot}%{_datadir}/doc/linvst3/
 %{_bindir}/linvst3convert*
 
 %changelog
+* Fri Mar 6 2020 drew DeVore <drew@devorcula.com> - 1.8
+- Bumped release to fix libdir
+
 * Mon Mar 2 2020 Drew DeVore <drew@devorcula.com> - 1.8
 - initial build
