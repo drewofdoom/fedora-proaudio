@@ -9,7 +9,7 @@ Summary:        Manages LinVst wrapped windows VSTs
 Group:          Applications/Multimedia
 License:        GPLv3
 URL:            https://github.com/Goli4thus/linvstmanager
-Source0:        https://github.com/Goli4thus/linvstmanager/releases/download/%{version}/linvstmanager-%{version}.tar.gz
+Source0:        https://github.com/Goli4thus/linvstmanager/archive/v%{version}.zip#/linvstmanager-%{version}.zip
 BuildRequires:  cmake
 BuildRequires:  make
 BuildRequires:  gcc
