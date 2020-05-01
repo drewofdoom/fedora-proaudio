@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:           airwindows
-Version:        20200223
+Version:        20200430
 Release:        1%{?dist}
 ExclusiveArch:  x86_64
 Summary:        A collection of open-source VST audio effects plugins.
