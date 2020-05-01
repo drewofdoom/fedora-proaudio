@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:           linvstmanager
-Version:        1.0.1
+Version:        1.0.2
 Release:        1%{?dist}
 ExclusiveArch:  x86_64
 Summary:        Manages LinVst wrapped windows VSTs
@@ -42,5 +42,7 @@ install -p -m 744 build/linvstmanager.desktop %{buildroot}/%{_datadir}/applicati
 %{_datadir}/applications/linvstmanager.desktop
 
 %changelog
+* Fri May 1 2020 Drew DeVore <drew@devorcula.com> - 1.0.2
+- Updated to 1.0.2
 * Fri Mar 6 2020 Drew DeVore <drew@devorcula.com> - 1.0.1
 - Initial version
