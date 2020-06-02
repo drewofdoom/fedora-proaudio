@@ -9,7 +9,7 @@ Summary:        Adds support for Windows vst's to be used in Linux vst capable D
 Group:          Applications/Multimedia
 License:        GPLv3
 URL:            https://github.com/osxmidi/LinVst
-Source0:        https://github.com/osxmidi/LinVst-X/releases/download/%{version}/LinVst-X-%{version}-Debian-Buster.zip
+Source0:        https://github.com/osxmidi/LinVst-X/releases/download/2.7/LinVst-X-%{version}-Debian-Buster.zip
 Requires:       /usr/bin/wine
 
 %description
