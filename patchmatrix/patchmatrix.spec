@@ -43,7 +43,7 @@ DESTDIR=%{buildroot} ninja install
 %{_datadir}/*
 
 %changelog
-* Fri May 1 2019 Drew DeVore <drew@devorcula.com> - 0.18.0
+* Fri May 1 2020 Drew DeVore <drew@devorcula.com> - 0.18.0
 - update to 0.18.0
 
 * Tue Oct 15 2019 Drew DeVore <drew@devorcula.com> - 0.16.0
