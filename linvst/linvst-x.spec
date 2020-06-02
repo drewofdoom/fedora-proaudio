@@ -1,8 +1,8 @@
 %global debug_package %{nil}
 
 Name:           linvst-x
-Version:        2.7
-Release:        2%{?dist}
+Version:        2.7.1
+Release:        1%{?dist}
 ExclusiveArch:  x86_64
 Summary:        Adds support for Windows vst's to be used in Linux vst capable DAW's.
 
@@ -37,7 +37,7 @@ install -p -m 744 ReadMe %{buildroot}%{_datadir}/doc/linvst-x/
 %{_bindir}/linvstxconvert*
 
 %changelog
-* Tue Jun 2 2020 Drew DeVore <drew@devorcula.com> - 2.7-2
-- Updated address to pull Debian-Buster instead of Debian-Stretch
+* Tue Jun 2 2020 Drew DeVore <drew@devorcula.com> - 2.7.1
+- Update to 2.7.1
 * Fri Mar 6 2020 Drew DeVore <drew@devorcula.com> - 2.7
 - Initial version
