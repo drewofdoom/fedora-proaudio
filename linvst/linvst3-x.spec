@@ -2,7 +2,7 @@
 
 Name:           linvst3-x
 Version:        1.7
-Release:        1%{?dist}
+Release:        2%{?dist}
 ExclusiveArch:  x86_64
 Summary:        Adds support for Windows VST3's to be used in Linux VST3 capable DAW's.
 
@@ -37,5 +37,7 @@ install -p -m 744 ReadMe %{buildroot}%{_datadir}/doc/linvst3-x/
 %{_bindir}/linvst3xconvert*
 
 %changelog
+* Tue Jun 2 2020 Drew DeVore <drew@devorcula.com> - 1.7-2
+- Updated address to pull Debian-Buster instead of Debian-Stretch
 * Fri Mar 6 2020 Drew DeVore <drew@devorcula.com> - 1.7
 - initial build
