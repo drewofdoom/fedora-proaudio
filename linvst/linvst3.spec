@@ -16,7 +16,7 @@ Requires:       /usr/bin/wine
 Adds support for Windows VST3's to be used in Linux VST3 capable DAW's.
 
 %prep
-%autosetup -n LinVst3-%{version}-Debian-Stretch
+%autosetup -n LinVst3-%{version}-Debian-Buster
 
 %install
 mkdir -p %{buildroot}/%{_bindir}
