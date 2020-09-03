@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:           linvst
-Version:        2.8
+Version:        3.0
 Release:        2%{?dist}
 ExclusiveArch:  x86_64
 Summary:        Adds support for Windows vst's to be used in Linux vst capable DAW's.
@@ -9,7 +9,7 @@ Summary:        Adds support for Windows vst's to be used in Linux vst capable D
 Group:          Applications/Multimedia
 License:        GPLv3
 URL:            https://github.com/osxmidi/LinVst
-Source0:        https://github.com/osxmidi/LinVst/releases/download/2.7/LinVst-%{version}-Debian-Stretch.zip
+Source0:        https://github.com/osxmidi/LinVst/releases/download/3.0/LinVst-%{version}-Debian-Stretch.zip
 Requires:       /usr/bin/wine
 
 %description
@@ -37,6 +37,9 @@ install -p -m 744 ReadMe %{buildroot}%{_datadir}/doc/linvst/
 %{_bindir}/linvstconvert*
 
 %changelog
+* Thu Sep 3 2020 Drew DeVore <drew@devorcula.com> - 3.0
+- Update to 3.0
+
 * Fri Mar 6 2020 Drew DeVore <drew@devorcula.com> - 2.8
 - Bumped release as package is not updating in COPR
 
