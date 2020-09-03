@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:           linvst3
-Version:        2.0
+Version:        2.0.0
 Release:        2%{?dist}
 ExclusiveArch:  x86_64
 Summary:        Adds support for Windows VST3's to be used in Linux VST3 capable DAW's.
@@ -9,7 +9,7 @@ Summary:        Adds support for Windows VST3's to be used in Linux VST3 capable
 Group:          Applications/Multimedia
 License:        GPLv3
 URL:            https://github.com/osxmidi/LinVst3
-Source0:        https://github.com/osxmidi/LinVst3/releases/download/%{version}/LinVst3-%{version}-Debian-Stretch.zip
+Source0:        https://github.com/osxmidi/LinVst3/releases/download/2.0/LinVst3-%{version}-Debian-Stretch.zip
 Requires:       /usr/bin/wine
 
 %description
