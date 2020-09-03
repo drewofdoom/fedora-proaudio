@@ -42,7 +42,7 @@ install -p -m 744 build/linvstmanager.desktop %{buildroot}/%{_datadir}/applicati
 %{_datadir}/applications/linvstmanager.desktop
 
 %changelog
-* Thus May 3 2020 Drew DeVore <drew@devorcula.com> - 1.1.1
+* Thu May 3 2020 Drew DeVore <drew@devorcula.com> - 1.1.1
 - Updated to 1.0.2
 * Fri May 1 2020 Drew DeVore <drew@devorcula.com> - 1.0.2
 - Updated to 1.0.2
