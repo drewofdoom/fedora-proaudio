@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name:    patchmatrix
-Version: 0.18.0
+Version: 0.20.0
 Release: 1%{?dist}
 Summary: A JACK patchbay in flow matrix style
 URL:     https://github.com/OpenMusicKontrollers/patchmatrix
@@ -43,6 +43,9 @@ DESTDIR=%{buildroot} ninja install
 %{_datadir}/*
 
 %changelog
+* Thu Sep 3 2020 Drew DeVore <drew@devorcula.com> - 0.20.0
+- update to 0.20.0
+
 * Fri May 1 2020 Drew DeVore <drew@devorcula.com> - 0.18.0
 - update to 0.18.0
 
