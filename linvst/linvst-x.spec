@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:           linvst-x
-Version:        2.7.1
+Version:        3.0
 Release:        1%{?dist}
 ExclusiveArch:  x86_64
 Summary:        Adds support for Windows vst's to be used in Linux vst capable DAW's.
@@ -9,7 +9,7 @@ Summary:        Adds support for Windows vst's to be used in Linux vst capable D
 Group:          Applications/Multimedia
 License:        GPLv3
 URL:            https://github.com/osxmidi/LinVst
-Source0:        https://github.com/osxmidi/LinVst-X/releases/download/2.7/LinVst-X-%{version}-Debian-Buster.zip
+Source0:        https://github.com/osxmidi/LinVst-X/releases/download/%{version}/LinVst-X-%{version}-Debian-Buster.zip
 Requires:       /usr/bin/wine
 
 %description
@@ -37,6 +37,8 @@ install -p -m 744 ReadMe %{buildroot}%{_datadir}/doc/linvst-x/
 %{_bindir}/linvstxconvert*
 
 %changelog
+* Thu Sep 3 2020 Drew DeVore <drew@devorcula.com> - 3.0
+- Update to 3.0
 * Tue Jun 2 2020 Drew DeVore <drew@devorcula.com> - 2.7.1
 - Update to 2.7.1
 * Fri Mar 6 2020 Drew DeVore <drew@devorcula.com> - 2.7
