@@ -9,7 +9,7 @@ Summary:        Adds support for Windows vst's to be used in Linux vst capable D
 Group:          Applications/Multimedia
 License:        GPLv3
 URL:            https://github.com/osxmidi/LinVst
-Source0:        https://github.com/osxmidi/LinVst/releases/download/3.0/LinVst-%{version}-Debian-Stretch.zip
+Source0:        https://github.com/osxmidi/LinVst/releases/download/%{version}/LinVst-%{version}-Debian-Stretch.zip
 Requires:       /usr/bin/wine
 
 %description
