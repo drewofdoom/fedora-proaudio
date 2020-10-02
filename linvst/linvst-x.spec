@@ -16,7 +16,7 @@ Requires:       /usr/bin/wine
 Adds support for Windows vst's to be used in Linux vst capable DAW's.
 
 %prep
-%autosetup -n LinVst-X-%{version}-Debian-rz20200714git
+%autosetup -n LinVst-X-%{version}-Debian-rz
 
 %install
 mkdir -p %{buildroot}/%{_bindir}
