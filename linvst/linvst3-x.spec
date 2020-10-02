@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:           linvst3-x
-Version:        2.0.0
+Version:        2.1
 Release:        1%{?dist}
 ExclusiveArch:  x86_64
 Summary:        Adds support for Windows VST3's to be used in Linux VST3 capable DAW's.
@@ -9,14 +9,14 @@ Summary:        Adds support for Windows VST3's to be used in Linux VST3 capable
 Group:          Applications/Multimedia
 License:        GPLv3
 URL:            https://github.com/osxmidi/LinVst3-X
-Source0:        https://github.com/osxmidi/LinVst3-X/releases/download/2.0/LinVst3-X-%{version}-Debian-Buster.zip
+Source0:        https://github.com/osxmidi/LinVst3-X/releases/download/%{version}/LinVst3-X-%{version}-Debian-rz.zip
 Requires:       /usr/bin/wine
 
 %description
 Adds support for Windows VST3's to be used in Linux VST3 capable DAW's.
 
 %prep
-%autosetup -n LinVst3-X-%{version}-Debian-Buster
+%autosetup -n LinVst3-X-%{version}-Debian-rz
 
 %install
 mkdir -p %{buildroot}/%{_bindir}
@@ -26,6 +26,8 @@ install -p -m 744 embedded/linvst3x.so %{buildroot}/%{_libdir}/linvst3-x/
 install -p -m 755 embedded/lin-vst3-server* %{buildroot}/%{_bindir}
 install -p -m 755 convert/linvst3xconvert* %{buildroot}/%{_bindir}
 install -p -m 744 ReadMe %{buildroot}%{_datadir}/doc/linvst3-x/
+
+%build
 
 %clean
 

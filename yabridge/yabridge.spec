@@ -1,16 +1,11 @@
-# Global variables for github repository
-%global commit0 150106e0e0d169d00173e6db8287db3d7a44f63e
-%global gittag0 master
-%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-
 %global debug_package %{nil}
 
 Name:    yabridge
-Version: 1.2.0
+Version: 1.6.1
 Release: 1%{?dist}
 Summary: Yet another VST bridge
 URL:     https://github.com/robbert-vdh/yabridge
-Source0: https://github.com/robbert-vdh/yabridge/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source0: https://github.com/robbert-vdh/yabridge/releases/download/%{version}/%{name}-%{version}.tar.gz
 Group:   Applications/Multimedia
 License: GPLv2+
 
@@ -24,7 +19,7 @@ BuildRequires: libxcb-devel
 Yet another VST bridge
 
 %prep
-%setup -qn %{name}-%{commit0}
+%autosetup
 
 %build
 mkdir build
@@ -41,3 +36,5 @@ DESTDIR=%{buildroot} ninja install
 %{_datadir}/*
 
 %changelog
+* Thu Oct 1 2020 drew DeVore <drew@devorcula.com> - 1.6.1
+- Update to 1.6.1

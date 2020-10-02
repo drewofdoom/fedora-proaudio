@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:           distrho-ports
-Version:        20180416git
+Version:        20200714git
 Release:        1%{?dist}
 ExclusiveArch:  x86_64
 Summary:        A collection of audio plugins
@@ -9,7 +9,14 @@ Summary:        A collection of audio plugins
 Group:          Applications/Multimedia
 License:        MIT
 URL:            https://github.com/DISTRHO/DISTRHO-Ports
-Source0:        https://github.com/DISTRHO/DISTRHO-Ports/releases/download/2018-04-16/DISTRHO-Ports-2018-04-16-linux64.tar.xz
+Source0:        https://github.com/DISTRHO/DISTRHO-Ports/archive/2020-07-14.tar.gz
+BuildRequires:  meson
+BuildRequires:  alsa-lib-devel
+BuildRequires:  freetype-devel
+BuildRequires:  mesa-libGL-devel
+BuildRequires:  libXrender-devel
+BuildRequires:  libXcursor-devel
+BuildRequires:  libxshmfence-devel
 
 %description
 A collection of audio plugins
@@ -29,14 +36,25 @@ Group:          Applications/Multimedia
 A collection of VST plugins
 
 %prep
-%autosetup -n DISTRHO-Ports-linux64
+rm -rf %{name}-%{version}
+tar -xvf %{_sourcedir}/2020-07-14.tar.gz
+if [ $? -ne 0 ]; then
+  exit $?
+fi
+mv DISTRHO-Ports-2020-07-14 %{name}-%{version}
+cd %{name}-%{version}
+
+%build
+cd %{name}-%{version}
+meson build --buildtype release
+ninja -C build
 
 %install
 mkdir -p %{buildroot}%{_datadir}/doc/%{name}
 mkdir -p %{buildroot}%{_libdir}/lv2/
 mkdir -p %{buildroot}%{_libdir}/vst/
-mv lv2/* %{buildroot}%{_libdir}/lv2/
-install -p -m 744 vst/*.so %{buildroot}%{_libdir}/vst/
+mv %{_builddir}/%{name}-%{version}/build/ports-legacy/*.lv2 %{buildroot}%{_libdir}/lv2/
+install -p -m 744 %{_builddir}/%{name}-%{version}/build/ports-legacy/*.so %{buildroot}%{_libdir}/vst/
 
 %clean
 

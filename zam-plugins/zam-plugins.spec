@@ -94,7 +94,7 @@ make DESTDIR=%{buildroot} PREFIX=/usr LIBDIR=%{_lib} %{?_smp_mflags} install
 * Fri Feb 28 2020 Drew DeVore <drew@devorcula.com> - 3.12
 - update to 3.12
 
-* Sun Jul 05 2018 Drew DeVore <drew@devorcula.com> - 3.10
+* Thu Jul 05 2018 Drew DeVore <drew@devorcula.com> - 3.10
 - renamed to match Fedora conventions
 
 * Sun May 06 2018 Drew DeVore <drew@devorcula.com> - 3.10

@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:           linvst
-Version:        3.0
+Version:        3.1
 Release:        2%{?dist}
 ExclusiveArch:  x86_64
 Summary:        Adds support for Windows vst's to be used in Linux vst capable DAW's.
@@ -9,14 +9,14 @@ Summary:        Adds support for Windows vst's to be used in Linux vst capable D
 Group:          Applications/Multimedia
 License:        GPLv3
 URL:            https://github.com/osxmidi/LinVst
-Source0:        https://github.com/osxmidi/LinVst/releases/download/%{version}/LinVst-%{version}-Debian-Buster.zip
+Source0:        https://github.com/osxmidi/LinVst/releases/download/%{version}/LinVst-%{version}-Debian-rz.zip
 Requires:       /usr/bin/wine
 
 %description
 Adds support for Windows vst's to be used in Linux vst capable DAW's.
 
 %prep
-%autosetup -n LinVst-%{version}-Debian-Buster
+%autosetup -n LinVst-%{version}-Debian-rz
 
 %install
 mkdir -p %{buildroot}/%{_bindir}
@@ -26,6 +26,8 @@ install -p -m 744 embedded/linvst.so %{buildroot}/%{_libdir}/linvst/
 install -p -m 755 embedded/lin-vst-server* %{buildroot}/%{_bindir}
 install -p -m 755 convert/linvstconvert* %{buildroot}/%{_bindir}
 install -p -m 744 ReadMe %{buildroot}%{_datadir}/doc/linvst/
+
+%build
 
 %clean
 
@@ -37,6 +39,9 @@ install -p -m 744 ReadMe %{buildroot}%{_datadir}/doc/linvst/
 %{_bindir}/linvstconvert*
 
 %changelog
+* Thu Oct 1 2020 Drew DeVore <drew@devorcula.com> - 3.1
+- Update to 3.1
+
 * Thu Sep 3 2020 Drew DeVore <drew@devorcula.com> - 3.0
 - Update to 3.0
 
