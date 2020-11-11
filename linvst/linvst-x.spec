@@ -9,14 +9,14 @@ Summary:        Adds support for Windows vst's to be used in Linux vst capable D
 Group:          Applications/Multimedia
 License:        GPLv3
 URL:            https://github.com/osxmidi/LinVst
-Source0:        https://github.com/osxmidi/LinVst-X/releases/download/%{version}/LinVst-X-%{version}-Debian-rz.zip
+Source0:        https://github.com/osxmidi/LinVst-X/releases/download/%{version}/LinVst-X-%{version}-Debian-Stretch.zip
 Requires:       /usr/bin/wine
 
 %description
 Adds support for Windows vst's to be used in Linux vst capable DAW's.
 
 %prep
-%autosetup -n LinVst-X-%{version}-Debian-rz
+%autosetup -n LinVst-X-%{version}-Debian-Stretch
 
 %install
 mkdir -p %{buildroot}/%{_bindir}

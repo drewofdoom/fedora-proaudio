@@ -9,14 +9,14 @@ Summary:        Adds support for Windows VST3's to be used in Linux VST3 capable
 Group:          Applications/Multimedia
 License:        GPLv3
 URL:            https://github.com/osxmidi/LinVst3
-Source0:        https://github.com/osxmidi/LinVst3/releases/download/%{version}/LinVst3-%{version}-Debian-rz.zip
+Source0:        https://github.com/osxmidi/LinVst3/releases/download/%{version}/LinVst3-%{version}-Debian-Stretch.zip
 Requires:       /usr/bin/wine
 
 %description
 Adds support for Windows VST3's to be used in Linux VST3 capable DAW's.
 
 %prep
-%autosetup -n LinVst3-%{version}-Debian-rz
+%autosetup -n LinVst3-%{version}-Debian-Stretch
 
 %install
 mkdir -p %{buildroot}/%{_bindir}
