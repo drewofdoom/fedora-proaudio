@@ -3,6 +3,7 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
+
 %global debug_package %{nil}
 
 Name:    patchmatrix
@@ -20,6 +21,7 @@ BuildRequires: lv2-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: libX11-devel
 BuildRequires: libXext-devel
+BuildRequires: glew-devel
 BuildRequires: meson
 
 %description
@@ -43,7 +45,7 @@ DESTDIR=%{buildroot} ninja install
 %{_datadir}/*
 
 %changelog
-* Tue Nov 3 2020 Drew DeVore <drew@devorcula.com> - 0.20.0
+* Tue Nov 10 2020 Drew DeVore <drew@devorcula.com> - 0.20.0
 - update to 0.20.0
 
 * Fri May 1 2020 Drew DeVore <drew@devorcula.com> - 0.18.0
