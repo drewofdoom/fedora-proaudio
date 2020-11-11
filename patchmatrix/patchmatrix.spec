@@ -1,5 +1,5 @@
 # Global variables for github repository
-%global commit0 69e616772ab45a77baf58ae1202e16c19649826c
+%global commit0 85ad5c0a760d4df07271afa7b9b7b75973bdca1f
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
@@ -7,7 +7,7 @@
 
 Name:    patchmatrix
 Version: 0.20.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A JACK patchbay in flow matrix style
 URL:     https://github.com/OpenMusicKontrollers/patchmatrix
 Source0: https://github.com/OpenMusicKontrollers/patchmatrix/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
@@ -43,7 +43,7 @@ DESTDIR=%{buildroot} ninja install
 %{_datadir}/*
 
 %changelog
-* Thu Sep 3 2020 Drew DeVore <drew@devorcula.com> - 0.20.0
+* Tue Nov 3 2020 Drew DeVore <drew@devorcula.com> - 0.20.0
 - update to 0.20.0
 
 * Fri May 1 2020 Drew DeVore <drew@devorcula.com> - 0.18.0
