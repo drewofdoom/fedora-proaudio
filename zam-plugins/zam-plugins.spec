@@ -1,15 +1,15 @@
 # Global variables for github repository
-%global commit0 87fdee6e87dbee75c1088e2327ea59c1ab1522e4
-%global gittag0 3.12
+%global commit0 8cd23d781018e3ec84159958d3d2dc7038a82736
+%global gittag0 3.13
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global commit1 68b3a57a78d814810972584ed571662fe5cfb8f0
+%global commit1 08669d1bc30c6e971fde800eade4ca40104ba8b2
 %global shortcommit1 %(c=%{commit1}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:           zam-plugins
-Version:        3.12
+Version:        3.13
 Release:        1%{?dist}
 Summary:        Zam set of plugins
 
@@ -91,6 +91,9 @@ make DESTDIR=%{buildroot} PREFIX=/usr LIBDIR=%{_lib} %{?_smp_mflags} install
 %{_libdir}/vst/* 
 
 %changelog
+* Tue Nov 10 2020 Drew DeVore <drew@devorcula.com> - 3.13
+- update to 3.13
+
 * Fri Feb 28 2020 Drew DeVore <drew@devorcula.com> - 3.12
 - update to 3.12
 

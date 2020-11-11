@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:    yabridge
-Version: 1.6.1
+Version: 2.0.1
 Release: 1%{?dist}
 Summary: Yet another VST bridge
 URL:     https://github.com/robbert-vdh/yabridge
@@ -36,5 +36,8 @@ DESTDIR=%{buildroot} ninja install
 %{_datadir}/*
 
 %changelog
+* Tue Nov 10 2020 drew DeVore <drew@devorcula.com> - 2.0.1
+- Update to 2.0.1
+
 * Thu Oct 1 2020 drew DeVore <drew@devorcula.com> - 1.6.1
 - Update to 1.6.1

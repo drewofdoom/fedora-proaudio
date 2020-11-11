@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:           linvst
-Version:        3.1
+Version:        3.15
 Release:        2%{?dist}
 ExclusiveArch:  x86_64
 Summary:        Adds support for Windows vst's to be used in Linux vst capable DAW's.
@@ -39,6 +39,9 @@ install -p -m 744 ReadMe %{buildroot}%{_datadir}/doc/linvst/
 %{_bindir}/linvstconvert*
 
 %changelog
+* Tue Nov 10 2020 Drew DeVore <drew@devorcula.com> - 3.15
+- Update to 3.15
+
 * Thu Oct 1 2020 Drew DeVore <drew@devorcula.com> - 3.1
 - Update to 3.1
 

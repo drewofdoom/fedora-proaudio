@@ -1,8 +1,8 @@
 %global debug_package %{nil}
 
 Name:           linvst3
-Version:        2.1
-Release:        2%{?dist}
+Version:        2.15
+Release:        1%{?dist}
 ExclusiveArch:  x86_64
 Summary:        Adds support for Windows VST3's to be used in Linux VST3 capable DAW's.
 
@@ -39,13 +39,16 @@ install -p -m 744 ReadMe %{buildroot}%{_datadir}/doc/linvst3/
 %{_bindir}/linvst3convert*
 
 %changelog
-* Thu Oct 1 2020 drew DeVore <drew@devorcula.com> - 2.1
+* Tue Nov 10 2020 Drew DeVore <drew@devorcula.com> - 2.15
+- Update to 2.15
+
+* Thu Oct 1 2020 Drew DeVore <drew@devorcula.com> - 2.1
 - Update to 2.1
 
-* Thu Sep 3 2020 drew DeVore <drew@devorcula.com> - 2.0
+* Thu Sep 3 2020 Drew DeVore <drew@devorcula.com> - 2.0
 - Update to 2.0
 
-* Fri Mar 6 2020 drew DeVore <drew@devorcula.com> - 1.8
+* Fri Mar 6 2020 Drew DeVore <drew@devorcula.com> - 1.8
 - Bumped release to fix libdir
 
 * Mon Mar 2 2020 Drew DeVore <drew@devorcula.com> - 1.8

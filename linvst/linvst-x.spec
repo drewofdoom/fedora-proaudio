@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:           linvst-x
-Version:        3.1
+Version:        3.15
 Release:        1%{?dist}
 ExclusiveArch:  x86_64
 Summary:        Adds support for Windows vst's to be used in Linux vst capable DAW's.
@@ -39,11 +39,17 @@ install -p -m 744 ReadMe %{buildroot}%{_datadir}/doc/linvst-x/
 %{_bindir}/linvstxconvert*
 
 %changelog
+* Tue Nov 10 2020 Drew DeVore <drew@devorcula.com> - 3.15
+- Update to 3.15
+
 * Thu Oct 1 2020 Drew DeVore <drew@devorcula.com> - 3.1
 - Update to 3.1
+
 * Thu Sep 3 2020 Drew DeVore <drew@devorcula.com> - 3.0
 - Update to 3.0
+
 * Tue Jun 2 2020 Drew DeVore <drew@devorcula.com> - 2.7.1
 - Update to 2.7.1
+
 * Fri Mar 6 2020 Drew DeVore <drew@devorcula.com> - 2.7
 - Initial version
