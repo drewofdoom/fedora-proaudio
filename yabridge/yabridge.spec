@@ -37,7 +37,7 @@ DESTDIR=%{buildroot} ninja install
 
 %changelog
 * Wed Dec 02 2020 drew DeVore <drew@devorcula.com> - 2.1.0
-- Update to 2.0.1
+- Update to 2.1.0
 
 * Tue Nov 10 2020 drew DeVore <drew@devorcula.com> - 2.0.1
 - Update to 2.0.1
