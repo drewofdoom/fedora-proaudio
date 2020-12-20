@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:           linvst
-Version:        3.15
+Version:        3.2.1
 Release:        2%{?dist}
 ExclusiveArch:  x86_64
 Summary:        Adds support for Windows vst's to be used in Linux vst capable DAW's.
