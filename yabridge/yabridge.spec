@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:    yabridge
-Version: 2.1.0
+Version: 2.2.1
 Release: 1%{?dist}
 Summary: Yet another VST bridge
 URL:     https://github.com/robbert-vdh/yabridge
