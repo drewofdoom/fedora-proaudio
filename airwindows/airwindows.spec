@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:           airwindows
-Version:        20201202
+Version:        20201222
 Release:        1%{?dist}
 ExclusiveArch:  x86_64
 Summary:        A collection of open-source VST audio effects plugins.
@@ -31,6 +31,9 @@ install -p -m 744 LinuxVST/*.so %{buildroot}%{_libdir}/vst/%{name}.vst
 %{_libdir}/vst/
 
 %changelog
+* Tue Dec 22 2020 Drew DeVore <drew@devorcula.com> - 20201222
+- update
+
 * Wed Dec 02 2020 Drew DeVore <drew@devorcula.com> - 20201202
 - update
 
