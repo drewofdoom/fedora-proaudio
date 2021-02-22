@@ -36,19 +36,19 @@ CONFIG=Release make -j$(nproc) Standalone VST3
 
 %install
 mkdir -p %{buildroot}/%{_bindir}
-mkdir -p %{buildroot}/%{_libdir}/vst3
+mkdir -p %{buildroot}/%{_libdir}/vst3/SonoBus.vst3/Contents/x86_64-linux
 mkdir -p %{buildroot}%{_datadir}/applications
 mkdir -p %{buildroot}%{_datadir}/pixmaps
-install -p -m 744 build/SonoBus %{buildroot}/%{_bindir}/SonoBus
-install -p -m 744 build/SonoBus.vst3 %{buildroot}/%{_libdir}/vst3/build/SonoBus.vst3
-install -p -m 644 ../../images/sonobus_logo@2x.png %{buildroot}/%{_datadir}/pixmaps/sonobus.png
-install -p -m 644 sonobus.desktop %{buildroot}/%{_datadir}/applications/sonobus.desktop
+install -p -m 744 Builds/LinuxMakefile/build/SonoBus %{buildroot}/%{_bindir}/SonoBus
+install -p -m 744 Builds/LinuxMakefile/build/SonoBus.vst3/Contents/x86_64-linux/SonoBus.so %{buildroot}/%{_libdir}/vst3/SonoBus.vst3/Contents/x86_64-linux/SonoBus.so
+install -p -m 644 images/sonobus_logo@2x.png %{buildroot}/%{_datadir}/pixmaps/sonobus.png
+install -p -m 644 Builds/LinuxMakefile/sonobus.desktop %{buildroot}/%{_datadir}/applications/sonobus.desktop
 
 %clean
 
 %files
 %{_bindir}/SonoBus
-%{_libdir}/vst3/build/SonoBus.vst3
+%{_libdir}/vst3/SonoBus.vst3/Contents/x86_64-linux/SonoBus.so
 %{_datadir}/pixmaps/sonobus.png
 %{_datadir}/applications/sonobus.desktop
 
