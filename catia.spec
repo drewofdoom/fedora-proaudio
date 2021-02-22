@@ -1,62 +1,64 @@
 # Global variables for github repository
-%global commit0 85ad5c0a760d4df07271afa7b9b7b75973bdca1f
+%global commit0 78b0307afeded440c80a2b1d732dd15382f7b335
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 
 %global debug_package %{nil}
 
-Name:    catia
-Version: 0.22.0
-Release: 2%{?dist}
-Summary: A JACK patchbay
-URL:     https://github.com/falkTX/Catia
-Source0: https://github.com/OpenMusicKontrollers/patchmatrix/archive/%{commit0}.tar.gz#/%{name}-%{commit0}.tar.gz
-Group:   Applications/Multimedia
-License: GPLv2+
-
+Name:           Catia
+Version:        git78b0307
+Release:        1%{?dist}
+Summary:        A JACK patchbay
+URL:            https://github.com/falkTX/Catia
+Source0:        https://github.com/falkTX/Catia/archive/%{commit}/%{name}-%{shortcommit0}.tar.gz
+Group:          Applications/Multimedia
+License:        GPLv2+
+BuildRequires:  python3-qt5-base
+Requires:       python3-qt5
 
 %description
 A JACK patchbay
 
 %prep
-%setup -qn %{name}-%{commit0}
+%autosetup -n %{name}-%{commit0}
 
 %build
-VERBOSE=1 meson --prefix=/usr build
-cd build
-VERBOSE=1 ninja 
+make
 
 %install
-
-cd build
-DESTDIR=%{buildroot} ninja install
+mkdir -p %{buildroot}/%{_bindir}
+mkdir -p %{buildroot}/%{_datadir}/applications
+mkdir -p %{buildroot}/%{_datadir}/icons/hicolor/16x16/apps
+mkdir -p %{buildroot}/%{_datadir}/icons/hicolor/48x48/apps
+mkdir -p %{buildroot}/%{_datadir}/icons/hicolor/128x128/apps
+mkdir -p %{buildroot}/%{_datadir}/icons/hicolor/256x256/apps
+mkdir -p %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps
+mkdir -p %{buildroot}/%{_datadir}/catia/jacklib
+mkdir -p %{buildroot}/%{_datadir}/catia/patchcanvas
+install -m 644 data/*.desktop               %{buildroot}/%{_datadir}/applications/
+install -m 644 resources/16x16/catia.png    %{buildroot}/%{_datadir}/icons/hicolor/16x16/apps/
+install -m 644 resources/48x48/catia.png    %{buildroot}/%{_datadir}/icons/hicolor/48x48/apps/
+install -m 644 resources/128x128/catia.png  %{buildroot}/%{_datadir}/icons/hicolor/128x128/apps/
+install -m 644 resources/256x256/catia.png  %{buildroot}/%{_datadir}/icons/hicolor/256x256/apps/
+install -m 644 resources/scalable/catia.svg %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/
+install -m 755 src/*.py                     %{buildroot}/%{_datadir}/catia/
+install -m 755 src/jacklib/*.py             %{buildroot}/%{_datadir}/catia/jacklib/
+install -m 755 src/patchcanvas/*.py         %{buildroot}/%{_datadir}/catia/patchcanvas/
+install -m 755 data/catia                   %{buildroot}/%{_bindir}/catia
 
 %files
-%{_bindir}/*
-%{_datadir}/*
+%{_datadir}/applications/
+%{_datadir}/icons/hicolor/16x16/apps/
+%{_datadir}/icons/hicolor/48x48/apps/
+%{_datadir}/icons/hicolor/128x128/apps/
+%{_datadir}/icons/hicolor/256x256/apps/
+%{_datadir}/icons/hicolor/scalable/apps/
+%{_datadir}/catia/
+%{_datadir}/catia/jacklib/
+%{_datadir}/catia/patchcanvas/
+%{_bindir}/catia
 
 %changelog
-* Sat Feb 06 2021 Drew DeVore <drew@devorcula.com> - 0.22.0
-- update to 0.22.0
-
-* Tue Nov 10 2020 Drew DeVore <drew@devorcula.com> - 0.20.0
-- update to 0.20.0
-
-* Fri May 1 2020 Drew DeVore <drew@devorcula.com> - 0.18.0
-- update to 0.18.0
-
-* Tue Oct 15 2019 Drew DeVore <drew@devorcula.com> - 0.16.0
-- update to 0.16.0
-
-* Fri Jul 5 2019 Drew DeVore <drew@devorcula.com> - 0.14.0
-
-* Mon Oct 15 2018 Yann Collette <ycollette.nospam@free.fr> - 0.12.0-2
-- update for Fedora 29
-
-* Sat May 12 2018 Yann Collette <ycollette.nospam@free.fr> - 0.12.0-2
-- update to latest master
-- switch to meson build
-
-* Tue Oct 24 2017 Yann Collette <ycollette.nospam@free.fr> - 0.20.0-1
-- inital release
+* Mon Feb 22 2021 Drew DeVore <drew@devorcula.com> - 78b0307afeded440c80a2b1d732dd15382f7b335
+- initial build
