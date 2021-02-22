@@ -11,7 +11,7 @@ License:        GPLv3
 URL:            https://github.com/essej/sonobus
 Source0:        https://github.com/essej/sonobus/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Requires:       libopusenc
-Requires:       jack-audio-connection-kit
+Requires:       (jack-audio-connection-kit or pipewire-jack-audio-connection-kit)
 BuildRequires:  libopusenc-devel
 BuildRequires:  jack-audio-connection-kit-devel
 BuildRequires:  alsa-lib-devel
