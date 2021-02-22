@@ -8,7 +8,7 @@
 
 Name:           Catia
 Version:        git78b0307
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        A JACK patchbay
 URL:            https://github.com/falkTX/Catia
 Source0:        https://github.com/falkTX/Catia/archive/%{commit0}/%{name}-%{shortcommit0}.tar.gz
@@ -46,7 +46,7 @@ install -m 644 resources/scalable/catia.svg %{buildroot}/%{_datadir}/icons/hicol
 install -m 755 src/*.py                     %{buildroot}/%{_datadir}/catia/
 install -m 755 src/jacklib/*.py             %{buildroot}/%{_datadir}/catia/jacklib/
 install -m 755 src/patchcanvas/*.py         %{buildroot}/%{_datadir}/catia/patchcanvas/
-sed -i "s?X-PREFIX-X?%{_datadir}?" data/catia
+sed -i "s?X-PREFIX-X?%{_prefix}?" data/catia
 install -m 755 data/catia                   %{buildroot}/%{_bindir}/catia
 
 %files
