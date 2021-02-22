@@ -16,6 +16,7 @@ Group:          Applications/Multimedia
 License:        GPLv2+
 BuildRequires:  python3-qt5-base
 Requires:       python3-qt5
+Requires:       (jack-audio-connection-kit or pipewire-jack-audio-connection-kit)
 
 %description
 A JACK patchbay
