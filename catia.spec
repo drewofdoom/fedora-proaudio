@@ -11,7 +11,7 @@ Version:        git78b0307
 Release:        1%{?dist}
 Summary:        A JACK patchbay
 URL:            https://github.com/falkTX/Catia
-Source0:        https://github.com/falkTX/Catia/archive/%{commit}/%{name}-%{shortcommit0}.tar.gz
+Source0:        https://github.com/falkTX/Catia/archive/%{commit0}/%{name}-%{shortcommit0}.tar.gz
 Group:          Applications/Multimedia
 License:        GPLv2+
 BuildRequires:  python3-qt5-base
