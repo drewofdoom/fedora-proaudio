@@ -46,7 +46,7 @@ install -m 644 resources/scalable/catia.svg %{buildroot}/%{_datadir}/icons/hicol
 install -m 755 src/*.py                     %{buildroot}/%{_datadir}/catia/
 install -m 755 src/jacklib/*.py             %{buildroot}/%{_datadir}/catia/jacklib/
 install -m 755 src/patchcanvas/*.py         %{buildroot}/%{_datadir}/catia/patchcanvas/
-sed -i "s?X-PREFIX-X?%{_datadir}?" %{_datadir}/bin/catia
+sed -i "s?X-PREFIX-X?%{_datadir}?" data/catia
 install -m 755 data/catia                   %{buildroot}/%{_bindir}/catia
 
 %files
