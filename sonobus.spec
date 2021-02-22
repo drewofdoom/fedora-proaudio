@@ -9,7 +9,7 @@ Summary:        SonoBus is an easy to use application for streaming high-quality
 Group:          Applications/Multimedia
 License:        GPLv3
 URL:            https://github.com/essej/sonobus
-Source0:        https://github.com/essej/sonobus/archive/%{version}.tar.gz
+Source0:        https://github.com/essej/sonobus/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Requires:       libopusenc
 Requires:       jack-audio-connection-kit
 BuildRequires:  libopusenc-devel
@@ -31,7 +31,7 @@ SonoBus is an easy to use application for streaming high-quality, low-latency pe
 %autosetup
 
 %build
-cd builds/LinuxMakefile
+cd Builds/LinuxMakefile
 CONFIG=Release make -j$(nproc) Standalone VST3
 
 %install
