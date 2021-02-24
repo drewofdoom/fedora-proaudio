@@ -7,7 +7,6 @@ Version:        1.3.2
 Release:        1%{?dist}
 ExclusiveArch:  x86_64
 Summary:        Application for streaming audio between devices
-Group:          Applications/Multimedia
 License:        GPLv3
 URL:            %{forgeurl}
 Source0:        %{forgesource}
@@ -50,8 +49,6 @@ install -p -m 755 Builds/LinuxMakefile/build/SonoBus %{buildroot}/%{_bindir}/Son
 install -p -m 744 Builds/LinuxMakefile/build/SonoBus.vst3/Contents/x86_64-linux/SonoBus.so %{buildroot}/%{_libdir}/vst3/SonoBus.vst3/Contents/x86_64-linux/SonoBus.so
 install -p -m 644 images/sonobus_logo@2x.png %{buildroot}/%{_datadir}/pixmaps/sonobus.png
 install -p -m 644 Builds/LinuxMakefile/sonobus.desktop %{buildroot}/%{_datadir}/applications/sonobus.desktop
-
-%clean
 
 %files
 %{_bindir}/SonoBus
