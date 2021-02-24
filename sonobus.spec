@@ -1,5 +1,9 @@
 %global debug_package %{nil}
 
+%global forgeurl    https://github.com/essej/sonobus
+%global tag         %{version}
+%forgemeta
+
 Name:           sonobus
 Version:        1.3.2
 Release:        1%{?dist}
@@ -8,8 +12,9 @@ Summary:        SonoBus is an easy to use application for streaming high-quality
 
 Group:          Applications/Multimedia
 License:        GPLv3
-URL:            https://github.com/essej/sonobus
-Source0:        https://github.com/essej/sonobus/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
+URL:            %{forgeurl}
+Source0:        %{forgesource}
+
 Requires:       libopusenc
 Requires:       (jack-audio-connection-kit or pipewire-jack-audio-connection-kit)
 BuildRequires:  libopusenc-devel
@@ -28,7 +33,7 @@ BuildRequires:  libcurl-devel
 SonoBus is an easy to use application for streaming high-quality, low-latency peer-to-peer audio between devices over the internet or a local network.
 
 %prep
-%autosetup
+%forgeautosetup
 
 %build
 cd Builds/LinuxMakefile
