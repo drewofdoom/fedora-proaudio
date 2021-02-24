@@ -21,13 +21,7 @@ BuildRequires:  pkgconfig(alsa)
 BuildRequires:  pkgconfig(freetype2)
 BuildRequires:  pkgconfig(libcurl)
 BuildRequires:  pkgconfig(opus)
-
-Requires:       libopusenc
-Requires:       (jack-audio-connection-kit or pipewire-jack-audio-connection-kit)
-BuildRequires:  libopusenc-devel
 BuildRequires:  jack-audio-connection-kit-devel
-BuildRequires:  libX11-devel
-BuildRequires:  libXext-devel
 BuildRequires:  libXinerama-devel
 BuildRequires:  libXrandr-devel
 BuildRequires:  libXcursor-devel
