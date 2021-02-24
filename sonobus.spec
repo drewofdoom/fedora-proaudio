@@ -14,6 +14,9 @@ License:        GPLv3
 URL:            %{forgeurl}
 Source0:        %{forgesource}
 
+BuildRequires:  make
+BuildRequires:  gcc-c++
+
 Requires:       libopusenc
 Requires:       (jack-audio-connection-kit or pipewire-jack-audio-connection-kit)
 BuildRequires:  libopusenc-devel
