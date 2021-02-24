@@ -42,14 +42,10 @@ cd Builds/LinuxMakefile
 %make_build Standalone VST3 CONFIG=Release
 
 %install
-mkdir -p %{buildroot}/%{_bindir}
-mkdir -p %{buildroot}/%{_libdir}/vst3/SonoBus.vst3/Contents/x86_64-linux
-mkdir -p %{buildroot}%{_datadir}/applications
-mkdir -p %{buildroot}%{_datadir}/pixmaps
-install -p -m 755 Builds/LinuxMakefile/build/SonoBus %{buildroot}/%{_bindir}/SonoBus
-install -p -m 744 Builds/LinuxMakefile/build/SonoBus.vst3/Contents/x86_64-linux/SonoBus.so %{buildroot}/%{_libdir}/vst3/SonoBus.vst3/Contents/x86_64-linux/SonoBus.so
-install -p -m 644 images/sonobus_logo@2x.png %{buildroot}/%{_datadir}/pixmaps/sonobus.png
-install -p -m 644 Builds/LinuxMakefile/sonobus.desktop %{buildroot}/%{_datadir}/applications/sonobus.desktop
+install -D -p -m 755 Builds/LinuxMakefile/build/SonoBus %{buildroot}%{_bindir}/SonoBus
+install -D -p -m 744 Builds/LinuxMakefile/build/SonoBus.vst3/Contents/x86_64-linux/SonoBus.so %{buildroot}%{_libdir}/vst3/SonoBus.vst3/Contents/x86_64-linux/SonoBus.so
+install -D -p -m 644 images/sonobus_logo@2x.png %{buildroot}%{_datadir}/pixmaps/sonobus.png
+install -D -p -m 644 Builds/LinuxMakefile/sonobus.desktop %{buildroot}%{_datadir}/applications/sonobus.desktop
 
 %files
 %{_bindir}/SonoBus
