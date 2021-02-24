@@ -1,5 +1,3 @@
-%global debug_package %{nil}
-
 %global forgeurl    https://github.com/essej/sonobus
 %global tag         %{version}
 %forgemeta
@@ -39,6 +37,7 @@ peer-to-peer audio between devices over the internet or a local network.
 %forgeautosetup
 
 %build
+%set_build_flags
 cd Builds/LinuxMakefile
 CONFIG=Release make -j$(nproc) Standalone VST3
 
