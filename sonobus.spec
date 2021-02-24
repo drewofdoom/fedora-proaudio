@@ -8,8 +8,7 @@ Name:           sonobus
 Version:        1.3.2
 Release:        1%{?dist}
 ExclusiveArch:  x86_64
-Summary:        SonoBus is an easy to use application for streaming high-quality, low-latency peer-to-peer audio between devices over the internet or a local network.
-
+Summary:        Application for streaming audio between devices
 Group:          Applications/Multimedia
 License:        GPLv3
 URL:            %{forgeurl}
@@ -30,7 +29,8 @@ BuildRequires:  freetype-devel
 BuildRequires:  libcurl-devel
 
 %description
-SonoBus is an easy to use application for streaming high-quality, low-latency peer-to-peer audio between devices over the internet or a local network.
+SonoBus is an easy to use application for streaming high-quality, low-latency
+peer-to-peer audio between devices over the internet or a local network.
 
 %prep
 %forgeautosetup
