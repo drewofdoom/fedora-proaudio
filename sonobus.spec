@@ -39,7 +39,7 @@ peer-to-peer audio between devices over the internet or a local network.
 %build
 %set_build_flags
 cd Builds/LinuxMakefile
-CONFIG=Release make -j$(nproc) Standalone VST3
+%make_build Standalone VST3 CONFIG=Release
 
 %install
 mkdir -p %{buildroot}/%{_bindir}
