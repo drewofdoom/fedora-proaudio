@@ -4,7 +4,7 @@
 %forgemeta
 Name:           sonobus
 Version:        1.3.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Application for streaming audio between devices
 # main source code is GPLv3
 # deps/aoo is BSD
@@ -68,5 +68,15 @@ install -D -p -m 755 Builds/LinuxMakefile/build/%{vst3_plugin} %{buildroot}%{_li
 %{_libdir}/vst3/%{vst3_plugin}
 
 %changelog
+* Wed Feb 24 2021 Drew DeVore <drew@devorcula.com> - 1.3.2
+- Merged changes from Carl and Sally
+- Reconfigured
+
+* Wed Feb 24 2021 Sally Haj <sallyahaj@autistici.org> - 1.3.2
+- Applied fixes and emailed to Drew DeVore
+
+* Wed Feb 24 2021 Carl George <carl@george.computer> - 1.3.2
+- Applied fixes and submitted PR
+
 * Sun Feb 21 2021 Drew DeVore <drew@devorcula.com> - 1.3.2
 - Initial build
